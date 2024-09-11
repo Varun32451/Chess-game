@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>chess master</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<body onload="setup();"></body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
+	<div>
+		<p id="turnInfo"><b>White</b> turn</p>
+		<section id="board">
+			<div class="overlay" id="promotionMessage">
+				<div class="overlay-inner">
+					<ul id="promotionList" class="white">
+						<li><a href="#" class="promotion-button queen" onclick="promote('queen')"></a></li>
+						<li><a href="#" class="promotion-button castle" onclick="promote('castle')"></a></li>
+						<li><a href="#" class="promotion-button bishop" onclick="promote('bishop')"></a></li>
+						<li><a href="#" class="promotion-button knight" onclick="promote('knight')"></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<div id="settings">
+		<p>Debug</p>
+		<button onclick="navigator.clipboard.writeText(generateFEN(pieces))">Copy FEN</button>
+		<button onclick="nextTurn()">Switch</button>
+	</div>
+</body>
+</html>
